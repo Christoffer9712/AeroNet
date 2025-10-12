@@ -31,8 +31,14 @@ header {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and LinkedIn link */
+}
+
+.socialmedia-link img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 nav ul {

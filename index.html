@@ -5,38 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consortium Project | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png">
 </head>
 <body>
   <!-- HEADER -->
   <header>
-    <div class="navbar">
-      <div class="logo">Logo</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="linkedin.html">LinkedIn</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="members.html">Members/Consortium</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="deliverables.html">Deliverables</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="AeroNet Logo" style="width:40%;height:40%;">
+    </a>
+    <a href="https://www.linkedin.com/company/msca-aeronet/" class="socialmedia-link" target="_blank">
+      <img src="images/linkedIn.png" alt="LinkedIn" style="width:18px; height:18px; vertical-align:middle;">
+    </a>
+    <a href="https://x.com/MSCA_AeroNet" class="socialmedia-link" target="_blank">
+      <img src="images/x.png" alt="X" style="width:18px; height:18px; vertical-align:middle;">
+    </a>
+  </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="members.html">Members/Consortium</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="deliverables.html">Deliverables</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+  </div>
   </header>
 
   <!-- MAIN -->
   <main>
     <section class="image-section">
-      <img src="https://via.placeholder.com/1200x400" alt="Project image" />
+      <img src="images/NTN_image.png" alt="Project image" />
     </section>
 
     <section class="text-section">
-      <h1>Welcome to Our Project</h1>
-      <p>
-        This is the main landing page for the EU Consortium Project.
-        Navigate using the menu to explore more about the project,
-        consortium members, deliverables, and news updates.
+      <h1>MSCA-AeroNet</h1>
+      <p> The integration of terrestrial networks (TN) and non-terrestrial
+networks (NTN) is a key step toward providing reliable, secure, and ubiquitous 
+connectivity with clear quality of service (QoS) guarantees. Native TN/NTN integration 
+will enable use cases such as in-flight broadband connectivity (IFBC) and mission-critical 
+operations. Although 3GPP has begun publishing normative requirements for TN/NTN 
+integration, several technical challenges remain. 
+
+Aircraft antenna design must improve to reduce drag while ensuring robust connectivity across 
+LEO, MEO, and GEO satellites as well as TN. Equally, handover procedures in multi-RAT environments 
+require proactive and optimised solutions to minimise control overhead, reduce interference, and 
+maintain end-user QoS. To address these challenges, we propose an architecture where aircraft 
+and satellites act as mobile wireless access and backhaul (WAB) nodes, while
+also hosting multi-access edge computing (MEC) for latency-sensitive services. 
+This architecture enables flexible deployment scenarios but necessitates advanced self-
+organizing networks (SON) and network optimization technologies.
       </p>
     </section>
   </main>
