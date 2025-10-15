@@ -11,6 +11,7 @@ body {
   color: #333;
   background-color: #fafafa;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevents horizontal scroll when nav slides */
 }
 
 /* HEADER */
@@ -27,84 +28,92 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between logo and LinkedIn link */
+  gap: 15px; /* space between logo and social media */
+}
+
+.logo-img {
+  width: auto;
+  height: 50px; /* Set a fixed height for better control */
+}
+
+.social-media-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .socialmedia-link img {
-  display: inline-block;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
+  transition: transform 0.3s ease;
 }
 
-nav ul {
+.socialmedia-link img:hover {
+  transform: scale(1.15); /* Nice little hover effect */
+}
+
+.nav-links ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
   color: white;
   font-weight: 500;
   padding: 0.5rem 0.8rem;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative; /* For the cool underline effect */
 }
 
-nav ul li a:hover {
-  background-color: #0066cc;
-}
-
-/* MAIN CONTENT */
-.image-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.image-section img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* overlay text container */
-.image-overlay {
+.nav-links a::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;     /* vertically center */
-  justify-content: center; /* horizontally center */
-  background: rgba(0, 0, 0, 0.3); /* optional subtle overlay */
+  left: 0;
+  background-color: #f0f0f0;
 }
 
-/* header text styling */
-.image-title {
-  color: #fff;
-  font-size: 7rem;         /* adjust as needed */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  text-shadow: 0 4px 10px rgba(44, 37, 37, 0.5); /* gives depth */
-}
-.image-title {
-  animation: fadeIn 2s ease-in-out;
+.nav-links a:hover {
+  background-color: #0059b3;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+
+/* HAMBURGER MENU STYLING */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
 }
 
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+
+/* MAIN CONTENT (styles from your original file - kept as they were) */
 .text-section {
   max-width: 1000px;
   margin: 2rem auto;
@@ -123,7 +132,79 @@ nav ul li a:hover {
   font-size: 1.1rem;
 }
 
-/* FOOTER */
+.image-section {
+  position: relative;
+  width: 100%;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative; /* Important for pin positioning */
+}
+
+.map-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* PIN STYLES (Kept as they were) */
+.pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.4);
+}
+.pin::after {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px;
+  width: 12px; height: 12px;
+  background-color: white;
+  border-radius: 50%;
+}
+.pin:hover {
+  transform: rotate(-45deg) scale(1.2);
+}
+.pin span {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.pin:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+.pin-London { top: 50%; left: 28%; }
+.pin-Germany { top: 52%; left: 36%; }
+.pin-Greece { top: 72%; left: 48%; }
+.pin-Estonia { top: 40%; left: 48%; }
+.pin-Cyprus { top: 78%; left: 55%; }
+
+/* FOOTER (styles from your original file - kept as they were) */
 footer {
   background-color: #00264d;
   color: white;
@@ -151,15 +232,67 @@ footer {
   max-width: 500px;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  nav ul {
+
+/* RESPONSIVE DESIGN - THIS IS WHERE THE MAGIC HAPPENS! */
+@media screen and (max-width: 820px) {
+  .map-container {
+    max-width: 95%;
+    margin: 1.5rem auto;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    top: 65px; /* Height of the header */
+    background-color: #004080;
+    height: calc(100vh - 65px);
+    width: 50%; /* Slide-in menu width */
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.5s ease-in;
   }
 
-  .text-section {
-    margin: 1rem;
-    padding: 1rem;
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-links.nav-active {
+    transform: translateX(0%); /* Slide into view */
+  }
+
+  .hamburger {
+    display: block; /* Show the hamburger */
+  }
+
+  /* Cool animation for the hamburger icon when clicked */
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-img {
+    height: 40px; /* Make logo a bit smaller on very small screens */
+  }
+  .socialmedia-link img {
+    width: 18px;
+    height: 18px;
+  }
+  .nav-links {
+    width: 70%; /* Make the menu wider on small phones */
   }
 }

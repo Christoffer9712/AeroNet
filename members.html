@@ -9,19 +9,21 @@
 <body>
   <header>
   <div class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="AeroNet Logo" style="width:40%;height:40%;">
-    </a>
-    <a href="https://www.linkedin.com/company/msca-aeronet/" class="socialmedia-link" target="_blank">
-      <img src="images/linkedIn.png" alt="LinkedIn" style="width:18px; height:18px; vertical-align:middle;">
-    </a>
-    <a href="https://x.com/MSCA_AeroNet" class="socialmedia-link" target="_blank">
-      <img src="images/x.png" alt="X" style="width:18px; height:18px; vertical-align:middle;">
-    </a>
-  </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="AeroNet Logo" class="logo-img">
+      </a>
+      <div class="social-media-container">
+        <a href="https://www.linkedin.com/company/msca-aeronet/" class="socialmedia-link" target="_blank">
+          <img src="images/linkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://x.com/MSCA_AeroNet" class="socialmedia-link" target="_blank">
+          <img src="images/x.png" alt="X">
+        </a>
+      </div>
+    </div>
 
-    <nav>
+    <nav class="nav-links">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -31,6 +33,11 @@
         <li><a href="contacts.html">Contacts</a></li>
       </ul>
     </nav>
+    <div class="hamburger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
   </div>
   </header>
 
@@ -39,8 +46,18 @@
       <h1>Members / Consortium</h1>
       <p>We will list all participating organizations and partners here and use a map.</p>
     </section>
+    <section class="image-section">
+      <div class="map-container">
+        <img src="europe.png" alt="Map of Europe">
+        <div class="pin pin-Greece"><span>Greece</span></div>
+        <div class="pin pin-London"><span>London</span></div>
+        <div class="pin pin-Estonia"><span>Estonia</span></div>
+        <div class="pin pin-Germany"><span>Germany</span></div>
+        <div class="pin pin-Cyprus"><span>Cyprus</span></div>
+      </div>
+    </section>
   </main>
-
+  <script src="app.js"></script>
   <footer>
     <div class="eu-statement">
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="EU Flag">
