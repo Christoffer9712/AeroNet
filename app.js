@@ -15,6 +15,29 @@ const navSlide = () => {
       hamburger.classList.toggle('toggle');
     });
   }
-  
-  // Call the function to activate it
-  navSlide();
+
+// Pin hover management to prevent blocking
+const managePinHover = () => {
+    const pins = document.querySelectorAll('.pin');
+    let currentZIndex = 100;
+    
+    pins.forEach(pin => {
+        pin.addEventListener('mouseenter', () => {
+            // Reset all pins to base z-index
+            pins.forEach(p => p.style.zIndex = '1');
+            // Set current pin to highest z-index
+            pin.style.zIndex = currentZIndex.toString();
+            
+            // Special handling for edge pins like SIGINT (Cyprus)
+            if (pin.classList.contains('pin-Cyprus')) {
+                pin.style.zIndex = '200'; // Even higher z-index for edge pins
+            }
+            
+            currentZIndex++;
+        });
+    });
+}
+
+// Call the functions to activate them
+navSlide();
+managePinHover();
