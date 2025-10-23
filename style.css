@@ -18,7 +18,7 @@ body {
 header {
   background-color: #004080;
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -116,9 +116,9 @@ header {
 
 /* MAIN CONTENT (styles from your original file - kept as they were) */
 .text-section {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem 1rem;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -136,6 +136,7 @@ header {
 .image-section {
   position: relative;
   width: 100%;
+  margin: 1rem auto;
 }
 
 .image-section img {
@@ -301,8 +302,8 @@ img {
 
 .map-container {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 10px;
+  margin: 1rem auto;
+  padding: 8px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -356,17 +357,37 @@ img {
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
+
+/* Special styling for multi-line organization names */
+.pin-LSBU span {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+  width: max-content;
+  max-width: 200px;
+}
+
+.pin-Cyprus span {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+  width: max-content;
+  max-width: 200px;
+}
 .pin:hover span {
   opacity: 1;
   visibility: visible;
 }
 .pin-London { top: 50%; left: 28%; }
-.pin-Germany { top: 52%; left: 36%; }
-.pin-Greece { top: 72%; left: 48%; }
-.pin-Estonia { top: 40%; left: 48%; }
-.pin-Cyprus { top: 78%; left: 55%; }
+.pin-LSBU { top: 52.8%; left: 27.3%; }
+.pin-Bradford { top: 49.6%; left: 25.1%; } 
+.pin-Italy { top: 77.9%; left: 50.6%; } 
+.pin-Germany { top: 54.1%; left: 49.4%; } 
+.pin-Greece { top: 83.5%; left: 70.1%; }
+.pin-Greece-1 { top: 83.9%; left: 68.1%; } 
+.pin-Estonia { top: 32.3%; left: 65.6%; } 
+.pin-Cyprus { top: 89.3%; left: 94.3%; }
 
-/* FOOTER (styles from your original file - kept as they were) */
 footer {
   background-color: #00264d;
   color: white;
