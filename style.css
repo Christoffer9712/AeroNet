@@ -609,3 +609,82 @@ NEWS SECTION
   margin-left: 0;
   padding-left: 0;
 }
+/* Center the table and limit its width */
+.aeronet-table-wrapper {
+  max-width: 800px;         /* Set desired width */
+  margin: 0 auto;           /* Center horizontally */
+  padding: 10px;            /* Optional spacing */
+  overflow-x: auto;         /* Scroll if needed on mobile */
+  background: transparent;  /* No background */
+}
+
+.aeronet-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08); /* Subtle card-like shadow */
+}
+
+/* Header */
+.aeronet-table thead {
+  background: #f2f5f9;
+}
+
+.aeronet-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e5e8ec;
+}
+
+/* Body rows */
+.aeronet-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eceff3;
+}
+
+.aeronet-table tbody tr:nth-child(even) {
+  background: #fafbfd;
+}
+
+.aeronet-table tbody tr:hover {
+  background: #eef5ff;
+}
+
+/* Mobile responsive stacking */
+@media (max-width: 600px) {
+  .aeronet-table {
+    min-width: 100%;
+  }
+
+  .aeronet-table thead {
+    display: none;
+  }
+
+  .aeronet-table tbody tr {
+    display: block;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .aeronet-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: none;
+  }
+
+  .aeronet-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #666;
+    margin-right: 10px;
+  }
+}
