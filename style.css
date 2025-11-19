@@ -339,27 +339,23 @@ img {
   pointer-events: none;
 }
 
-/* Special styling for multi-line organization names */
-.pin-LSBU span {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.2;
-  width: max-content;
-  max-width: 200px;
-}
 
 .pin-Cyprus span {
-  white-space: normal;
-  text-align: center;
-  line-height: 1.2;
-  width: max-content;
-  max-width: 180px;
-  /* Position tooltip above the pin to stay within container */
-  left: 50%;
-  right: auto;
-  bottom: 120%;
-  transform: translateX(-50%) rotate(45deg);
-  z-index: 20; /* Higher z-index for edge pins */
+  position: absolute;
+  bottom: 400%;
+  left: 0%;
+}
+
+/* Ensure pin tooltip images don't get shrunk by the global img rule.
+   Targeted and conservative: this overrides max-width:100% only inside
+   pin tooltips so other images remain responsive. Tweak width as needed. */
+.pin span img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: none; /* override global img max-width */
+  width: 60px;     /* sensible default for logos in tooltips */
+  height: auto;
+  margin-right: 8px;
 }
 .pin:hover span {
   opacity: 1;
